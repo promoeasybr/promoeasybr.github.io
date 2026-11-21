@@ -1,0 +1,11 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Autorização TikTok · PromoEasy</title><style>body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:24px 16px;line-height:1.6;color:#1d2510;background:#fff}h1{color:#678d15}h2{margin-top:28px}a{color:#4c680e}</style></head><body>
+<h1>Autorização do TikTok</h1>
+<p id="msg">Copie o código abaixo e cole no terminal do servidor, no comando <b>promoeasy tiktok-login</b>.</p>
+<textarea id="code" rows="4" style="width:100%;font-size:15px" readonly></textarea>
+<p><button id="copiar" style="font-size:16px;padding:8px 16px">Copiar código</button></p>
+<script>
+var p=new URLSearchParams(location.search),c=p.get('code'),e=p.get('error');
+var t=document.getElementById('code');
+if(c){t.value=c;}else{document.getElementById('msg').textContent='A autorização não foi concluída: '+(e||'sem código')+'.';}
+document.getElementById('copiar').onclick=function(){t.select();try{navigator.clipboard.writeText(t.value);}catch(x){document.execCommand('copy');}};
+</script></body></html>
